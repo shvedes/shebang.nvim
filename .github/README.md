@@ -5,7 +5,8 @@ when editing a new file.
 
 ## Installation
 
-```VimL
+Lazy:
+```lua
 {
     "shvedes/shebang.nvim",
     event = "BufNewFile"
