@@ -20,7 +20,11 @@ local function is_ignored_dir(filepath, ignore_dirs)
   for _, dir in ipairs(ignore_dirs) do
     local abs_dir = normalize_path(dir)
 
-    if vim.startswith(abs_file, abs_dir .. "/") or abs_file == abs_dir then
+    if not abs_dir:match("/$") then
+      abs_dir = abs_dir .. "/"
+    end
+
+    if vim.startswith(abs_file, abs_dir) then
       return true
     end
   end
