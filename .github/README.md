@@ -20,15 +20,17 @@ You can set custom shells by setting the global variables `shebang_shells`,
 ### lua
 
 ```lua
+vim.g.shebang_ignore_dirs = {
+    "~/.config/nvim"
+    "ignored_dir_2"
+}
+
 vim.g.shebang_commands = {
     py = '/usr/bin/python3.9'
 }
+
 vim.g.shebang_shells = {
     py = 'python3.9'
-}
-vim.g.shebang_ignore_dirs {
-    "~/.config/nvim"
-    "$TMPDIR"
 }
 ```
 
